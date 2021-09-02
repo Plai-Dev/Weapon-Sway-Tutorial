@@ -22,11 +22,11 @@ public class PlayerLook : MonoBehaviour {
 
     private void Update()
     {
-        float mouseX = Input.GetAxisRaw("Mouse X");
-        float mouseY = Input.GetAxisRaw("Mouse Y");
+        float mouseX = Input.GetAxisRaw("Mouse X") * 0.1f;
+        float mouseY = Input.GetAxisRaw("Mouse Y") * 0.1f;
 
-        yRotation += mouseX * sensX * Time.deltaTime * 100f;
-        xRotation -= mouseY * sensY * Time.deltaTime * 100f;
+        yRotation += mouseX * sensX;
+        xRotation -= mouseY * sensY;
 
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
